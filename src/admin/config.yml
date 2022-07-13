@@ -1,0 +1,29 @@
+backend:
+  name: git-gateway
+  branch: master # Branch to update (optional; defaults to master)
+
+# This line should *not* be indented
+publish_mode: editorial_workflow
+
+# These lines should *not* be indented
+media_folder: "public/blog/blogImages" 
+public_folder: "/blog/blogImages"
+
+collections:
+  - name: "blog"
+    label: "Blog"
+    folder: "src/blog"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}" # Filename template, e.g., YYYY-MM-DD-title.md
+    fields: # The fields for each document, usually in front matter
+      - {label: "Title", name: "title", widget: "string"}
+      - {label: "Description", name: "description", widget: "string"}
+      - {label: "Author", name: "author", widget: "string"}
+      - {label: "Date", name: "date", widget: "datetime"}
+      - {label: "Tags", name: "tags", widget: "list", default: "post"}
+      - {label: "Featured Image", name: "image", widget: "image"}
+      - {label: "Image Caption", name: "imageAlt", widget: "string"}
+      - {label: "Body", name: "body", widget: "markdown"}
+
+
+# Read the Netlify CMS Documentation

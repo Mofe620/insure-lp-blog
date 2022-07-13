@@ -8,11 +8,25 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
         <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
     <body>
         {% include 'header.njk' %}
         {{ content | safe }}
         {% include 'footer.njk' %}
+
+
         <script src="script.js" async defer></script>
+        <script>
+        if (window.netlifyIdentity) {
+            window.netlifyIdentity.on("init", user => {
+            if (!user) {
+                window.netlifyIdentity.on("login", () => {
+                document.location.href = "/admin/";
+                });
+            }
+            });
+        }
+        </script>
     </body>
-</html>src\images\favicon-32x32.png
+</html>
