@@ -7,7 +7,9 @@
         <meta name="description" content="">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
+        <link rel="stylesheet" href="/swup.css">
         <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
+        <script src="https://unpkg.com/swup@latest/dist/swup.min.js"></script> 
     </head>
     <body>
         <header>
@@ -17,11 +19,13 @@
             <a href=""><li>How we work</li></a>
             <a href="/blog/"><li>Blog</li></a>
             <a href=""><li>Account</li></a>
-            <a href=""><button>View plans</button></a>
+            <a href=""><button id="cta-btn">View plans</button></a>
         </ul>
         <span id="nav-toggle"></span>
     </nav>
 </header>
+        <div class="overlay transition-wipe"></div>
+        <section id="swup" class="transition-fade">
         
 <div class="article-container">
     <h2>My Third Article</h2>
@@ -36,6 +40,7 @@
 <p>Volutpat lacus laoreet non curabitur gravida. Accumsan in nisl nisi scelerisque eu ultrices vitae auctor. Posuere urna nec tincidunt praesent semper feugiat nibh sed pulvinar. Ipsum consequat nisl vel pretium lectus quam. Est lorem ipsum dolor sit amet. Dictum at tempor commodo ullamcorper a lacus vestibulum sed arcu. Integer eget aliquet nibh praesent tristique magna sit amet purus. Tristique senectus et netus et malesuada fames ac turpis. Sit amet volutpat consequat mauris nunc congue nisi vitae suscipit. Maecenas sed enim ut sem viverra. Ante in nibh mauris cursus mattis molestie a iaculis at. Vitae auctor eu augue ut lectus arcu bibendum at.</p>
 </p>
 </div>
+        </section>
         <footer>
     <div class="footer-logo">
         <img src="/images/logo.svg" alt="">
@@ -87,6 +92,12 @@
         coded by <a href="www.github.com/Mofe620">Mofe620</a>.
         </div>
 </footer>
+
+        
         <script src="/script.js" async defer></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
+        <script>
+            const swup = new Swup();
+        </script>
     </body>
 </html>

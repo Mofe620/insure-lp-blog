@@ -1,0 +1,13 @@
+---
+title: title
+layout: 'base.njk'
+---
+
+<div class="article-container">
+    <h2>{{ title }}</h2>
+    <figure>
+        <img src="{{ image }}" alt="{{ imageAlt}}">
+        <figcaption>{{ imageAlt }}</figcaption>
+    </figure>
+    <p>{{ content | safe }}</p>
+</div>

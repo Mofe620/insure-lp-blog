@@ -5,17 +5,19 @@ layout: 'base.njk'
 <div class="blog_container">
     <main class="blog_section">
         <h1>Recent Blog Posts</h1>
-        <a href="/">Go back to Home</a>
         <div class="blogpost-list">
-            {%- for post in collections.post -%}
+            {%- for post in collections.post | reverse -%}
                 <div class="blogpost-item">
                     <div class="blogpost_meta">
                         <h4>{{ post.data.title }}</h4>
+                        <span>{{ post.data.author }} on {{ post.data.date | postDate }}</span>
                         <p>{{ post.data.description }}</p>
+                        <a href="{{ post.url }}">Read more</a>
                     </div>
-                    <img src="{{ post.data.image }}" alt="" class="blog_img">
+                    <img src="{{ post.data.image }}" alt="{{ post.data.imageAlt }}">
                 </div>
             {%- endfor -%}
+            <a href="/">Go back to Home</a>
         </div>
     </main>  
     <aside class="sidebar">

@@ -8,25 +8,16 @@
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <link rel="stylesheet" href="/style.css">
         <link rel="shortcut icon" href="/images/favicon-32x32.png" type="image/x-icon">
-        <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     </head>
-    <body>
+    <body data-barba="wrapper">
         {% include 'header.njk' %}
+        <section data-barba="container" data-barba-namespace="home">
         {{ content | safe }}
+        </section>
         {% include 'footer.njk' %}
-
-
-        <script src="script.js" async defer></script>
-        <script>
-        if (window.netlifyIdentity) {
-            window.netlifyIdentity.on("init", user => {
-            if (!user) {
-                window.netlifyIdentity.on("login", () => {
-                document.location.href = "/admin/";
-                });
-            }
-            });
-        }
-        </script>
+        <script src="/script.js" async defer></script>
+        <script src="/animate.js"></script>
+        <script type="module" src="/barbascript.js" async defer></script>
+        <script src="https://s3-us-west-2.amazonaws.com/s.cdpn.io/16327/gsap-latest-beta.min.js"></script>
     </body>
 </html>

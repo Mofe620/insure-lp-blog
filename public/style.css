@@ -9,6 +9,7 @@
     --lightGrey: hsl(0, 0%, 98%);
     --bolder: 700;
 }
+
 *,
 *::before,
 *::after {
